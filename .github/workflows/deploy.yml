@@ -51,7 +51,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: backend/node_modules
-          key: npm-v1-${{ hashFiles('backend/package-lock.json) }}
+          key: npm-v1-${{ hashFiles('backend/package-lock.json') }}
       
       - run: docker-compose exec -T web npm ci
         if: ${{ !steps.cache-npm-ci.outputs.cache-hit }}
